@@ -1549,7 +1549,9 @@ ClusterRoleList clusterRoleList = client.rbac().clusterRoles().withLabel("key1",
 ```
 Boolean isDeleted = client.rbac().clusterRoles().withName("clusterrole1").delete();
 ```
-`ClusterRoleBinding` is available in Kubernetes Client API via `client.rbac().clusterRoles()`. Here are some of the common usages:
+
+### ClusterRoleBinding
+`ClusterRoleBinding` is available in Kubernetes Client API via `client.rbac().clusterRoleBindings()`. Here are some of the common usages:
 - Load `ClusterRoleBinding` from yaml:
 ```
 ClusterRoleBinding clusterRoleBinding = client.rbac().clusterRoleBindings().load(new FileInputStream("clusterrolebinding-test.yml")).get();
@@ -1590,6 +1592,7 @@ ClusterRoleBindingList clusterRoleBindingList = client.rbac().clusterRoleBinding
 Boolean isDeleted = client.rbac().clusterRoleBindings().withName("clusterrolebindingname").delete();
 ```
 
+### Role
 `Role` is available in Kubernetes Client API via `client.rbac().roles()`. Here are some of the common usages:
 - Load `Role` from yaml:
 ```
@@ -1626,6 +1629,7 @@ RoleList roleList = client.rbac().roles().inNamespace("default").withLabel("key1
 Boolean isDeleted = client.rbac().roles().withName("rolename").delete();
 ```
 
+### RoleBinding
 `RoleBinding` is available in Kubernetes Client API via `client.rbac().roleBindings()`. Here are some of the common usages:
 - Load `RoleBinding` from yaml:
 ```
